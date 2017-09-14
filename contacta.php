@@ -15,7 +15,7 @@
                     <form action="" method="post">
                     <!--Header-->
                     <div class="form-header mdb-color">
-                        <h3><i class="fa fa-envelope"></i> Escríbenos:</h3>
+                        <h3><i class="fa fa-envelope"></i> Escriunos:</h3>
                     </div>
 
                     <!--Body-->
@@ -24,10 +24,10 @@
                                 $stmt = $conn->prepare('INSERT INTO mensajes (asunto,contenido,mail,nombre,data_envio,hora_envio,leido,contestado) VALUES (:asunto,:contenido,:mail,:nombre,:data_envio,:hora_envio,:leido,:contestado)');
                                 $rows=$stmt->execute(array(':asunto'=>$_POST['tema'],':contenido'=>$_POST['contenido'],'mail'=>$_POST['mail'],'nombre'=>$_POST['nombre'],':data_envio'=>date("Y-m-d"),'hora_envio'=>date("h:i:s"),':leido'=>0,':contestado'=>0));
                                 if($rows==1){
-                                    echo "mensaje enviado correctamente a las ".date("Y-m-d");
+                                    echo "missatge enviat correctament ".date("Y-m-d");
                                 }
                                 else{
-                                    echo "se ha producido un error al enviar el mensaje";
+                                    echo "se ha produit un error al enviar el missatge";
                                 }    
                             }
                             else {
@@ -36,25 +36,25 @@
                     <div class="md-form">
                         <i class="fa fa-user prefix"></i>
                         <input type="text" id="form3" class="form-control" name="nombre">
-                        <label for="form3">Nombre y Apellidos</label>
+                        <label for="form3">nom i cognom</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
                         <input type="text" id="form2" class="form-control" name="mail">
-                        <label for="form2">Correo Electrónico</label>
+                        <label for="form2">Correo Electrònic</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-tag prefix"></i>
                         <input type="text" id="form32" class="form-control" name="tema">
-                        <label for="form32">Asunto del Mensaje</label>
+                        <label for="form32">tema del missatge</label>
                     </div>
 
                     <div class="md-form">
                         <i class="fa fa-pencil prefix"></i>
                         <textarea type="text" id="form8" class="md-textarea" name="contenido"></textarea>
-                        <label for="form8">Tu mensaje</label>
+                        <label for="form8">missatge</label>
                     </div>
 
                     <div class="text-center">
